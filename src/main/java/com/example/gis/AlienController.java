@@ -17,7 +17,7 @@ import ch.qos.logback.core.encoder.Encoder;
 @RestController
 public class AlienController {
     @RequestMapping("/aliens")
-    public List<Layer> getAliens() {
+    public String getAliens() {
         String plainClientCredentials = "admin:geoserver";
         Base64.Encoder encoder = Base64.getEncoder();
         String base64ClientCredentials = new String(encoder.encode(plainClientCredentials.getBytes()));
@@ -33,6 +33,6 @@ public class AlienController {
         aliens.add("ayush");
         aliens.add("syuh");
 
-        return response.getBody().getLayers().getLayer();
+        return "OpenLayers map preview";
     }
 }

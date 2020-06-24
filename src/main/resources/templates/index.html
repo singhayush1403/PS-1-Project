@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layers</title>
+</head>
+<body>
+    <h1 th:text="${title}"></h1>
+    <ul th:each="layers:${list}">
+    <li >
+        <a th:href="@{'/map?name='+${layers.name}}" th:text= "${layers.name}"></a>
+    </li>
+</ul>
+    <!-- <a th:each="layers:${list}" href= ""th:text="${layers.href}"></a> -->
+</body>
+</html>
