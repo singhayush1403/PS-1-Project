@@ -10,8 +10,9 @@ public class MapController {
     @RequestMapping("/map")
     String getMap(@RequestParam("name") String name,Model model){
         String[] arr = name.split(":");
-        model.addAttribute("store", arr[0]);
-        model.addAttribute("name", arr[1]);
+       model.addAttribute("server", arr[0]);
+       model.addAttribute("layername", arr[1]);
+        model.addAttribute("name", name);
         return "OpenLayers map preview";
     }
 }

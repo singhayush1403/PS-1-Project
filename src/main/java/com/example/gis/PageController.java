@@ -29,20 +29,7 @@ public class PageController {
         ResponseEntity<Root> response = restTemplate.exchange(url, HttpMethod.GET, request, Root.class);
        Layers list =  response.getBody().getLayers();
        
-        // String plainClientCredentials = "admin:geoserver";
-        // Base64.Encoder encoder = Base64.getEncoder();
-        // String base64ClientCredentials = new String(encoder.encode(plainClientCredentials.getBytes()));
-        // HttpHeaders headers = new HttpHeaders();
-        // headers.add("Authorization", "Basic " + base64ClientCredentials);
-        // // headers.add("accept", "text/html");
-        // HttpEntity<String> request = new HttpEntity<String>(headers);
-        // RestTemplate restTemplate = new RestTemplate();
-        // String url = "http://localhost:8080/geoserver/rest/layers";
-        // ResponseEntity<Root> response = restTemplate.exchange(url, HttpMethod.GET, request, Root.class);
-        // System.out.println(response.getBody().getLayers());
-        // List<String> aliens = new ArrayList<String>();
-        // aliens.add("ayush");
-        // aliens.add("syuh");
+        
         model.addAttribute("title", "List of layers");
         model.addAttribute("list", list.layer);
         return "index";
